@@ -40,7 +40,7 @@ Read the build file for the pre-requisites.
    gradlew test
    ```
 
-   > Expect to see some activities on the console of the selenium node. If it completes successfully your setup is good.
+   > Expect to see some activities on the console of the selenium node and firefox browser. If it completes successfully your setup is good.
 
 # Sample Feature File
 
@@ -50,7 +50,7 @@ The sample **cucumber feature file** is called **google_cheese.feature** and is 
 <LOCAL_CLONED_REPO_DIR>\src\test\resources\gradle\cucumber
 ```
 
-> The **LOCAL_CLONED_REPO_DIR** is where you cloned this repository.
+> The **LOCAL_CLONED_REPO_DIR** is where you've cloned this repository.
 
 # Sample Cucumber Runner File
 
@@ -60,7 +60,7 @@ The sample **cucumber runner file** is called **CucumberRunner.java** and is loc
 <LOCAL_CLONED_REPO_DIR>\src\test\java\gradle\cucumber
 ```
 
-> The **LOCAL_CLONED_REPO_DIR** is where you cloned this repository.
+> The **LOCAL_CLONED_REPO_DIR** is where you've cloned this repository.
 
 # Sample Step Definition
 
@@ -70,7 +70,7 @@ The sample **step definition file** is called **GoogleCheese.java** and is locat
 <LOCAL_CLONED_REPO_DIR>\src\test\java\gradle\cucumber
 ```
 
-> The **LOCAL_CLONED_REPO_DIR** is where you cloned this repository.
+> The **LOCAL_CLONED_REPO_DIR** is where you've cloned this repository.
 
 ## WebDriver
 
@@ -80,7 +80,7 @@ The only driver that is part of this template is **geckodriver.exe** for **firef
 <LOCAL_CLONED_REPO_DIR>\webdriver
 ```
 
-> The **LOCAL_CLONED_REPO_DIR** is where you cloned this repository.
+> The **LOCAL_CLONED_REPO_DIR** is where you've cloned this repository.
 
 ## Author
 
