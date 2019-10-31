@@ -1,0 +1,54 @@
+import java.nio.file.Paths
+
+apply plugin: 'java'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+group 'xyz.ronella.testing.cucumber'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url 'https://repo.ronella.xyz/archiva/repository/internal/'
+        credentials {
+            username "${archivaUsername}"
+            password "${archivaPassword}"
+        }
+    }
+    maven {
+        url 'https://repo.ronella.xyz/archiva/repository/snapshots/'
+        credentials {
+            username "${archivaUsername}"
+            password "${archivaPassword}"
+        }
+    }
+}
+
+dependencies {
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-support', version: "${selenium_version}"
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-server-standalone', version: "${selenium_version}"
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version: "${selenium_version}"
+    testImplementation group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: "${selenium_version}"
+    testImplementation group: 'io.cucumber', name: 'cucumber-java', version: "${cucumber_version}"
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: "${cucumber_version}"
+}
+
+task startSeleniumHub(type: JavaExec) {
+    classpath = sourceSets.test.runtimeClasspath
+    main = 'org.openqa.grid.selenium.GridLauncherV3'
+    args = ['-role', 'hub']
+}
+
+task startSeleniumNode(type: JavaExec)  {
+    def pathGeckoWebDriver = Paths.get(projectDir.toString(), 'webdriver', 'geckodriver.exe').toString()
+
+    classpath = sourceSets.test.runtimeClasspath
+    main = 'org.openqa.grid.selenium.GridLauncherV3'
+    jvmArgs = ["-Dwebdriver.gecko.driver=${pathGeckoWebDriver}"]
+    args = ['-role'
+            , 'node'
+            , '-hub'
+            , 'http://localhost:4444/grid/register'
+    ]
+}
