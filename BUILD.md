@@ -4,6 +4,8 @@
 
 * Java 11 or above
 
+* Firefox web browser
+
 * Create or update **<USER_HOME>\\.gradle\\gradle.properties** to have the following properties:
 
     ```properties
