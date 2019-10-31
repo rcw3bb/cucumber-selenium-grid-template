@@ -19,6 +19,8 @@ Read the build file for the pre-requisites.
    ```
 
    > The selenium hub must start successfully before moving on to the next step.
+   >
+   > This will start the selenium hub service at port **4444**.
 
 4. On a separate console, start the **selenium node** using the following command:
 
@@ -26,7 +28,11 @@ Read the build file for the pre-requisites.
    gradlew startSeleniumNode
    ```
 
-   > The selenium node must start successfully before moving on to the next step.
+   > The selenium node must start successfully before moving on to the next step. 
+   >
+   > You can access the **selenium grid console** using the following url:
+   >
+   >  http://localhost:4444/grid/console 
 
 5. On a separate console, run the **cucumber test** using the following command:
 
@@ -34,7 +40,7 @@ Read the build file for the pre-requisites.
    gradlew test
    ```
 
-   > Expect to see some activities on the selenium node. If it completes successfully your setup is good.
+   > Expect to see some activities on the console of the selenium node. If it completes successfully your setup is good.
 
 # Sample Feature File
 
