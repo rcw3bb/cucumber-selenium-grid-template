@@ -2,7 +2,9 @@
 
 ## Pre-requisite
 
-* Java 11 or above
+* Java 8
+
+* Maven 3.x
 
 * Firefox web browser
 
@@ -13,24 +15,24 @@
     archivaPassword=<VALID_PASSWORD>
     ```
     
-    > If you don't have access to my **archiva** update the **repositories section** in the **build.gradle** file from:
+    > If you don't have access to my **archiva**, update all the **repositories section** in the **build.gradle** file **after cloning** from:
     >
     > ```
     > repositories {
-    >     maven {
-    >         url 'https://repo.ronella.xyz/archiva/repository/internal/'
-    >         credentials {
-    >             username "${archivaUsername}"
-    >             password "${archivaPassword}"
-    >         }
-    >     }
-    >     maven {
-    >         url 'https://repo.ronella.xyz/archiva/repository/snapshots/'
-    >         credentials {
-    >             username "${archivaUsername}"
-    >             password "${archivaPassword}"
-    >         }
-    >     }
+    >  maven {
+    >      url 'https://repo.ronella.xyz/archiva/repository/internal/'
+    >      credentials {
+    >          username "${archivaUsername}"
+    >          password "${archivaPassword}"
+    >      }
+    >  }
+    >  maven {
+    >      url 'https://repo.ronella.xyz/archiva/repository/snapshots/'
+    >      credentials {
+    >          username "${archivaUsername}"
+    >          password "${archivaPassword}"
+    >      }
+    >  }
     > }
     > ```
     >
@@ -38,6 +40,6 @@
     >
     > ```
     > repositories {
-    >     mavenCentral()
+    >  mavenCentral()
     > }
     > ```
