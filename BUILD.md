@@ -11,35 +11,28 @@
 * Create or update **<USER_HOME>\\.gradle\\gradle.properties** to have the following properties:
 
     ```properties
-    archivaUsername=<VALID_USERNAME>
-    archivaPassword=<VALID_PASSWORD>
+    artifactoryUsername=<VALID_USERNAME>
+    artifactoryPassword=<VALID_PASSWORD>
     ```
     
-    > If you don't have access to my **archiva**, update all the **repositories section** in the **build.gradle** file **after cloning** from:
+    > If you don't have access to my **artifactory**, update all the **repositories section** in the **build.gradle** file **after cloning**, from:
     >
     > ```
     > repositories {
-    >  maven {
-    >      url 'https://repo.ronella.xyz/archiva/repository/internal/'
-    >      credentials {
-    >          username "${archivaUsername}"
-    >          password "${archivaPassword}"
+    >      maven {
+    >            url 'https://repo.ronella.xyz/artifactory/java-central'
+    >            credentials {
+    >                username "${artifactoryUsername}"
+    >                password "${artifactoryPassword}"
+    >            }
     >      }
     >  }
-    >  maven {
-    >      url 'https://repo.ronella.xyz/archiva/repository/snapshots/'
-    >      credentials {
-    >          username "${archivaUsername}"
-    >          password "${archivaPassword}"
-    >      }
-    >  }
+    >    ```
+    >    
+    >    to
+    >    
+    >    ```
+    >  repositories {
+    > 	mavenCentral()
     > }
-    > ```
-    >
-    > to
-    >
-    > ```
-    > repositories {
-    >  mavenCentral()
-    > }
-    > ```
+    >```
